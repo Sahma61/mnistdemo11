@@ -9,7 +9,7 @@ from app.torch_utils import Net
 app = Flask(__name__)
 normal = transforms.Normalize(torch.tensor([0.1307]), torch.tensor([0.3081]))
 model = Net()
-model.load_state_dict(torch.load('app/mnist.pt'))
+model.load_state_dict(torch.load('app/mnist.pth'))
 model.eval()
 
 @app.route("/predict", methods=["POST"])
